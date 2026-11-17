@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaluador de Negocios Digitales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <nav class="topbar">
+    <div class="brand">
+      <span class="logo">◈</span>
+      <span>Evaluador de Negocios Digitales</span>
+    </div>
+    <span class="tag">Análisis estratégico asistido por IA</span>
+  </nav>
+
+  <header class="hero">
+    <h1>Evaluación profesional de tu negocio digital</h1>
+    <p>Sube el documento de tu negocio y recibe un dictamen de nivel
+       inversionista: calificación por dimensiones estratégicas, benchmarking
+       frente a competidores reales del mercado y recomendaciones accionables.</p>
+  </header>
+
+  <main>
+    <section class="uploader" id="uploader">
+      <form id="form" enctype="multipart/form-data">
+        <label class="dropzone" id="dropzone">
+          <input type="file" id="pdf" name="pdf" accept="application/pdf" hidden />
+          <div class="dropzone-inner">
+            <span class="icon">⬆</span>
+            <span class="dz-text" id="dz-text">Arrastra tu PDF aquí o haz clic para seleccionarlo</span>
+            <span class="dz-sub">Formato PDF con texto · máx. 16 MB</span>
+          </div>
+        </label>
+        <button type="submit" id="btn" disabled>
+          <span>Evaluar negocio</span>
+        </button>
+      </form>
+    </section>
+
+    <section id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p id="loading-text">Analizando el documento y generando el dictamen…</p>
+    </section>
+
+    <section id="error" class="error hidden"></section>
+
+    <section id="resultado" class="resultado hidden"></section>
+  </main>
+
+  <footer>
+    <p>Metodología basada en las lecturas de Arquitectura de Negocio
+       (Modelo de Negocio, Modelo Estratégico, Mapa de Capacidades, Análisis
+       Estratégico) y <em>Playing to Win</em> — Lafley &amp; Martin.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
