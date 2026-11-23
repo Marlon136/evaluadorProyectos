@@ -42,7 +42,7 @@ const steps = [
   "Analizando modelo de negocio y propuesta de valor…",
   "Evaluando estrategia y capacidades…",
   "Comparando con competidores del mercado…",
-  "Redactando el dictamen profesional…",
+  "Redactando el diagnóstico cualitativo…",
 ];
 let stepTimer = null;
 function startSteps() {
@@ -96,30 +96,40 @@ function list(items) {
   return `<ul>${items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`;
 }
 
-function scoreColor(score) {
-  if (score >= 75) return "var(--accent-2)";
-  if (score >= 50) return "var(--accent-3)";
-  return "var(--danger)";
+// Clase CSS según el nivel cualitativo (sin números).
+function nivelClase(nivel) {
+  const n = (nivel || "").toLowerCase();
+  if (n.startsWith("cumpl")) return "lvl-ok";
+  if (n.startsWith("parcial")) return "lvl-mid";
+  if (n.startsWith("incipi")) return "lvl-low";
+  if (n.startsWith("ausente")) return "lvl-bad";
+  return "lvl-na";
 }
 
 function render(data) {
-  const score = Number(data.puntaje_global) || 0;
-
   const dims = (data.dimensiones || [])
     .map((d) => {
-      const pct = ((Number(d.puntaje) || 0) / 5) * 100;
+      const crits = (d.criterios || [])
+        .map(
+          (c) => `
+          <li class="crit-row">
+            <span class="lvl-tag ${nivelClase(c.nivel)}">${esc(c.nivel)}</span>
+            <span class="crit-text"><b>${esc(c.criterio)}</b> ${esc(c.hallazgo)}</span>
+          </li>`
+        )
+        .join("");
       return `
       <div class="dim card">
         <div class="dim-head">
           <h4>${esc(d.nombre)}</h4>
-          <span class="dim-score">${esc(d.puntaje)} / 5</span>
+          <span class="lvl-tag ${nivelClase(d.nivel)}">${esc(d.nivel)}</span>
         </div>
-        <div class="bar"><span style="width:${pct}%"></span></div>
-        <p class="just">${esc(d.justificacion)}</p>
+        <p class="just">${esc(d.diagnostico)}</p>
+        ${crits ? `<ul class="crit-list">${crits}</ul>` : ""}
         <div class="lists">
           <div class="block pos"><h5>Fortalezas</h5>${list(d.fortalezas)}</div>
           <div class="block neg"><h5>Debilidades</h5>${list(d.debilidades)}</div>
-          <div class="block rec"><h5>Recomendaciones</h5>${list(d.recomendaciones)}</div>
+          <div class="block rec"><h5>Cambios sugeridos</h5>${list(d.recomendaciones)}</div>
         </div>
       </div>`;
     })
@@ -163,25 +173,17 @@ function render(data) {
     : "";
 
   resultado.innerHTML = `
-    <div class="score-card card">
-      <div class="gauge" style="--val:${score}; --gcolor:${scoreColor(score)}">
-        <div class="gauge-inner">
-          <span class="gauge-value">${esc(score)}</span>
-          <span class="gauge-label">/ 100</span>
-        </div>
+    <div class="diag-card card">
+      <div class="row">
+        <span class="badge">Diagnóstico cualitativo</span>
+        ${data.nombre_negocio ? `<span class="biz-name">• ${esc(data.nombre_negocio)}</span>` : ""}
       </div>
-      <div class="score-meta">
-        <div class="row">
-          <span class="badge">${esc(data.nivel || "Sin nivel")}</span>
-          ${data.nombre_negocio ? `<span class="biz-name">• ${esc(data.nombre_negocio)}</span>` : ""}
-        </div>
-        <h2>Dictamen de evaluación</h2>
-        ${data.veredicto ? `<p class="verdict">▸ ${esc(data.veredicto)}</p>` : ""}
-        <p class="summary">${esc(data.resumen_ejecutivo || "")}</p>
-      </div>
+      <h2>Diagnóstico del diseño</h2>
+      ${data.valoracion_global ? `<p class="verdict">▸ ${esc(data.valoracion_global)}</p>` : ""}
+      <p class="summary">${esc(data.resumen_diagnostico || "")}</p>
     </div>
 
-    <h3 class="section-title">Evaluación por dimensión estratégica</h3>
+    <h3 class="section-title">Diagnóstico por dimensión</h3>
     <div class="dims">${dims}</div>
 
     ${compHtml}
@@ -189,8 +191,8 @@ function render(data) {
     <h3 class="section-title">Riesgos principales</h3>
     <div class="panel card">${list(data.riesgos_principales)}</div>
 
-    <h3 class="section-title">Recomendaciones prioritarias</h3>
-    <div class="panel card">${list(data.recomendaciones_prioritarias)}</div>
+    <h3 class="section-title">Cambios prioritarios sobre el diseño</h3>
+    <div class="panel card">${list(data.cambios_prioritarios)}</div>
 
     <div class="actions">
       <button class="btn-secondary" id="again">Evaluar otro documento</button>

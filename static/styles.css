@@ -135,7 +135,33 @@ button:not(:disabled):hover { transform: translateY(-2px); }
   box-shadow: var(--shadow);
 }
 
-/* Score hero card */
+/* Diagnostic hero card (cualitativo, sin números) */
+.diag-card { padding: 28px 30px; }
+.diag-card .row { margin-bottom: 8px; }
+.diag-card h2 { margin: 6px 0 4px; font-size: 1.45rem; }
+
+/* Etiquetas de nivel cualitativo */
+.lvl-tag {
+  display: inline-block; padding: 3px 11px; border-radius: 20px;
+  font-size: .76rem; font-weight: 700; white-space: nowrap;
+  letter-spacing: .3px;
+}
+.lvl-ok  { background: rgba(39,217,163,.16); color: var(--accent-2); }
+.lvl-mid { background: rgba(245,166,35,.16); color: var(--accent-3); }
+.lvl-low { background: rgba(123,139,255,.16); color: #9aa8ff; }
+.lvl-bad { background: rgba(255,107,107,.16); color: var(--danger); }
+.lvl-na  { background: rgba(152,162,196,.16); color: var(--muted); }
+
+.crit-list { list-style: none; margin: 4px 0 14px; padding: 0; }
+.crit-row {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 8px 0; border-bottom: 1px solid var(--line);
+}
+.crit-row:last-child { border-bottom: none; }
+.crit-text { font-size: .9rem; color: var(--muted); }
+.crit-text b { color: var(--text); font-weight: 600; }
+
+/* Score hero card (compat) */
 .score-card {
   padding: 30px;
   display: grid;

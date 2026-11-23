@@ -1,28 +1,36 @@
 # Evaluador de Negocios Digitales
 
-Aplicación web que recibe el **PDF** de un negocio digital, lo evalúa con un
-modelo de IA según una **rúbrica profesional** derivada de las lecturas del
-curso de Arquitectura de Negocio y de *Playing to Win* (Lafley & Martin), y
-devuelve una evaluación estructurada.
+# Asistente de diagnóstico de negocios digitales
+
+Ejercicio ISIS-2411 (Reemplazo Examen #2). Aplicación web que recibe el **PDF**
+del diseño de un negocio digital (Taller #3), lo analiza con un modelo de IA
+según una **metodología propia** apoyada en las lecturas del curso de
+Arquitectura de Negocio y en *Playing to Win* (Lafley & Martin), y devuelve un
+**diagnóstico cualitativo** (sin calificación numérica).
+
+> Los entregables del ejercicio están en la carpeta `entregables/`
+> (ver `entregables/README_ENTREGABLES.md`).
 
 ## ¿Qué evalúa?
 
-La rúbrica (ver `rubrica.py`) tiene 6 dimensiones ponderadas:
+La metodología (ver `rubrica.py`) tiene 7 dimensiones. Cada criterio declara su
+**propósito** (qué verifica y por qué importa):
 
-| Dimensión | Peso | Base conceptual |
-|-----------|------|-----------------|
-| Modelo de negocio | 20% | Lectura #2 – El Modelo de Negocio |
-| Propuesta / promesa de valor | 18% | Modelo de Negocio + Modelo Estratégico |
-| Modelo estratégico y cascada de decisiones | 20% | El Modelo Estratégico + Playing to Win |
-| Capacidades de negocio | 12% | Lectura #1 – El Mapa de Capacidades |
-| Clientes, mercado y entorno competitivo | 15% | Análisis Estratégico (Porter, PEST) |
-| Viabilidad financiera y operativa | 15% | Análisis Estratégico (financiero, TI, riesgos) |
+| Dimensión | Base conceptual |
+|-----------|-----------------|
+| Modelo de negocio | El Modelo de Negocio |
+| Propuesta / promesa de valor | Modelo de Negocio + Modelo Estratégico |
+| Modelo estratégico y cascada de decisiones | El Modelo Estratégico + Playing to Win |
+| Capacidades de negocio | El Mapa de Capacidades |
+| Clientes, mercado y entorno competitivo | Análisis Estratégico (Porter, PEST) |
+| Viabilidad financiera y operativa | Análisis Estratégico (financiero, TI, riesgos) |
+| Completitud y coherencia de los modelos del negocio | Arquitectura de Negocio |
 
-Además de calificar las dimensiones (0 a 5) y dar un **puntaje global 0-100**,
-nivel, veredicto y resumen ejecutivo, la evaluación incluye un **análisis
-competitivo**: identifica productos/empresas reales similares del mercado, qué
-hacen mejor, qué **diferencia** al negocio evaluado, si tiene una ventaja
-competitiva sostenible (moat) y su posicionamiento.
+El diagnóstico es **cualitativo**: cada dimensión y cada criterio recibe un
+nivel (Cumplido / Parcial / Incipiente / Ausente / No aplica), con hallazgos,
+fortalezas, debilidades y cambios sugeridos. Incluye también un **análisis
+competitivo** (empresas reales comparables, diferenciadores, posicionamiento) y
+una lista de **cambios prioritarios** sobre el diseño. No hay puntajes ni notas.
 
 ## Proveedor de IA: Google Gemini (gratis)
 

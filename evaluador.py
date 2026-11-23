@@ -6,7 +6,7 @@ import time
 
 import pypdf
 
-from rubrica import DIMENSIONES, ESCALA, rubrica_texto
+from rubrica import ESCALA, rubrica_texto
 
 MAX_CHARS = int(os.environ.get("MAX_PDF_CHARS", "60000"))
 TIMEOUT_IA = int(os.environ.get("TIMEOUT_IA", "90"))
@@ -18,6 +18,8 @@ MODELO_GEMINI = os.environ.get("GEMINI_MODEL", "gemini-3.1-flash-lite")
 MODELOS_RESPALDO = [
     MODELO_GEMINI,
     "gemini-3.5-flash-lite",
+    "gemini-3.6-flash",
+    "gemini-flash-latest",
 ]
 
 
@@ -53,19 +55,24 @@ def extraer_texto_pdf(datos_pdf: bytes) -> str:
 def _esquema() -> dict:
     return {
         "nombre_negocio": "string (nombre del negocio digital si se identifica, o 'No especificado')",
-        "resumen_ejecutivo": "string (4-6 frases, con voz de ingeniero de negocios digitales)",
-        "puntaje_global": "number 0-100",
-        "nivel": "string: Sobresaliente | Sólido | Aceptable | Débil | Insuficiente",
-        "veredicto": "string: una frase contundente de inversión/viabilidad (p. ej. apto para inversión, requiere pivote, etc.)",
+        "resumen_diagnostico": "string (4-6 frases, diagnóstico cualitativo global del diseño, SIN números ni notas)",
+        "valoracion_global": "string (etiqueta cualitativa del estado del diseño, p. ej. 'Diseño sólido con vacíos en coherencia' - NUNCA un número)",
         "dimensiones": [
             {
                 "id": "string (id exacto de la dimensión de la rúbrica)",
                 "nombre": "string",
-                "puntaje": "number 0-5",
-                "justificacion": "string (análisis técnico, no superficial)",
+                "nivel": "string: Cumplido | Parcial | Incipiente | Ausente | No aplica",
+                "diagnostico": "string (análisis cualitativo de la dimensión, con evidencia del documento)",
+                "criterios": [
+                    {
+                        "criterio": "string (el criterio evaluado)",
+                        "nivel": "string: Cumplido | Parcial | Incipiente | Ausente | No aplica",
+                        "hallazgo": "string (qué se encontró en el diseño respecto a este criterio)",
+                    }
+                ],
                 "fortalezas": ["string"],
                 "debilidades": ["string"],
-                "recomendaciones": ["string"],
+                "recomendaciones": ["string (cambios concretos sobre el diseño)"],
             }
         ],
         "analisis_competitivo": {
@@ -83,64 +90,49 @@ def _esquema() -> dict:
             "posicionamiento": "string: Líder potencial | Retador | Seguidor | Nicho | Sin diferenciación clara",
         },
         "riesgos_principales": ["string"],
-        "recomendaciones_prioritarias": ["string"],
+        "cambios_prioritarios": ["string (cambios concretos recomendados sobre el diseño del negocio)"],
     }
 
 
 def _construir_prompt(texto_negocio: str) -> tuple:
     system = (
-        "Actúas como un evaluador profesional e ingeniero de negocios digitales "
-        "con experiencia en arquitectura de negocio, estrategia e inversión en "
-        "startups. Evalúas con rigor técnico, criterio de inversionista y tono "
-        "profesional, objetivo y constructivo. Usas los marcos de la rúbrica "
-        "(Modelo de Negocio, Modelo Estratégico, Mapa de Capacidades, Análisis "
-        "Estratégico Empresarial y la cascada de decisiones de Playing to Win de "
-        "Lafley & Martin). Para el análisis competitivo usas tu conocimiento del "
-        "mercado para nombrar productos o empresas reales comparables. Si el "
-        "documento no aporta información para un criterio, lo dices explícitamente "
-        "y calificas bajo. No inventes datos del negocio que no estén en el "
-        "documento, pero SÍ puedes aportar referencias reales de mercado para el "
-        "benchmarking."
+        "Actúas como evaluador e ingeniero de negocios digitales. Evalúas la "
+        "versión preliminar del DISEÑO de un negocio digital (Talleres #1 a #3) "
+        "y entregas un DIAGNÓSTICO CUALITATIVO, con rigor técnico y tono "
+        "profesional, objetivo y constructivo. Usas únicamente los marcos de la "
+        "metodología provista (Modelo de Negocio, Modelo Estratégico, Mapa de "
+        "Capacidades, Análisis Estratégico y la cascada de Playing to Win). "
+        "REGLA ABSOLUTA: NO asignes calificaciones numéricas, puntajes, notas ni "
+        "porcentajes de ningún tipo; el diagnóstico es puramente cualitativo "
+        "mediante las etiquetas de nivel definidas. Si el documento no aporta "
+        "información para un criterio, dilo explícitamente y usa el nivel "
+        "'Ausente' o 'Incipiente'. No inventes datos del negocio que no estén en "
+        "el documento; para el análisis competitivo sí puedes citar empresas "
+        "reales del mercado."
     )
 
-    user = f"""Evalúa el siguiente negocio digital con estándar profesional.
+    user = f"""Diagnostica cualitativamente el siguiente diseño de negocio digital.
 
-=== RÚBRICA (dimensiones y criterios) ===
+=== METODOLOGÍA DE EVALUACIÓN (dimensiones, criterios y su propósito) ===
 {rubrica_texto()}
 
-=== ESCALA DE CALIFICACIÓN ===
+=== NIVELES DE CUMPLIMIENTO (cualitativos, SIN números) ===
 {ESCALA}
 
 === INSTRUCCIONES ===
-1. Califica cada dimensión de 0 a 5 según la escala, con una justificación técnica (no superficial), fortalezas, debilidades y recomendaciones accionables.
-2. ANÁLISIS COMPETITIVO (obligatorio): identifica entre 2 y 4 productos o empresas REALES del mercado que sean similares o competidores del negocio evaluado. Para cada uno explica qué hace, en qué se parece y qué hacen mejor. Luego determina qué DIFERENCIA al negocio evaluado, si tiene una ventaja competitiva sostenible (moat) y su posicionamiento.
-3. Calcula el puntaje_global (0-100) como promedio ponderado por el peso de cada dimensión, normalizado a 100.
-4. Asigna un nivel y un veredicto profesional (tipo decisión de inversión).
-5. Lista riesgos principales y recomendaciones prioritarias (máximo 5 de cada una).
+1. Para cada dimensión, evalúa cada uno de sus criterios asignando un nivel cualitativo y un hallazgo breve con evidencia del documento. Luego da un nivel y un diagnóstico cualitativo de la dimensión completa, con fortalezas, debilidades y recomendaciones de cambio concretas.
+2. ANÁLISIS COMPETITIVO: identifica entre 2 y 4 productos o empresas REALES del mercado comparables. Explica qué hacen, en qué se parecen y qué hacen mejor. Determina qué diferencia al negocio, si tiene ventaja competitiva sostenible y su posicionamiento.
+3. Da un resumen de diagnóstico global y una valoración global en PALABRAS (nunca un número).
+4. Lista riesgos principales y cambios prioritarios concretos sobre el diseño.
+5. NO uses puntajes, notas, porcentajes ni escalas numéricas en ninguna parte.
 6. Responde ÚNICAMENTE con un JSON válido que cumpla EXACTAMENTE este esquema (sin texto adicional, sin markdown):
 
 {json.dumps(_esquema(), ensure_ascii=False, indent=2)}
 
-=== DOCUMENTO DEL NEGOCIO DIGITAL ===
+=== DOCUMENTO (DISEÑO DEL NEGOCIO DIGITAL - TALLER #3) ===
 {texto_negocio}
 """
     return system, user
-
-
-def _normalizar(resultado: dict) -> dict:
-    """Asegura que el puntaje global sea consistente con los pesos."""
-    pesos = {d["id"]: d["peso"] for d in DIMENSIONES}
-    total_peso = sum(pesos.values())
-
-    suma = 0.0
-    for dim in resultado.get("dimensiones", []):
-        peso = pesos.get(dim.get("id"), 0)
-        puntaje = float(dim.get("puntaje", 0) or 0)
-        suma += (puntaje / 5.0) * peso
-
-    if total_peso:
-        resultado["puntaje_global"] = round(suma / total_peso * 100, 1)
-    return resultado
 
 
 def _limpiar_json(contenido: str) -> str:
@@ -178,7 +170,7 @@ def evaluar_pdf(datos_pdf: bytes) -> dict:
         system_instruction=system,
         temperature=0.2,
         response_mime_type="application/json",
-        max_output_tokens=6000,
+        max_output_tokens=8192,
     )
 
     # Lista de modelos a probar, sin duplicados y conservando el orden.
@@ -222,4 +214,4 @@ def evaluar_pdf(datos_pdf: bytes) -> dict:
             "El modelo devolvió una respuesta que no es JSON válido."
         ) from exc
 
-    return _normalizar(resultado)
+    return resultado
