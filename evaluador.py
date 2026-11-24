@@ -67,7 +67,7 @@ def _esquema() -> dict:
                     {
                         "criterio": "string (el criterio evaluado)",
                         "nivel": "string: Cumplido | Parcial | Incipiente | Ausente | No aplica",
-                        "hallazgo": "string (qué se encontró en el diseño respecto a este criterio)",
+                        "hallazgo": "string (respuesta a la pregunta diagnóstica con evidencia textual del documento; cita o parafrasea lo que dice el diseño)",
                     }
                 ],
                 "fortalezas": ["string"],

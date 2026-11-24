@@ -28,6 +28,7 @@ from reportlab.platypus import (
 )
 
 from rubrica import DIMENSIONES, ESCALA, NIVELES
+from evaluador import _construir_prompt
 
 SALIDA = "entregables/1_metodologia_criterios.pdf"
 
@@ -82,6 +83,12 @@ def estilos():
     s["nota"] = ParagraphStyle(
         "nota", parent=base["Normal"], fontSize=9.5, textColor=GRIS,
         leading=14,
+    )
+    s["code"] = ParagraphStyle(
+        "code", parent=base["Normal"], fontName="Courier", fontSize=8,
+        leading=11, textColor=colors.HexColor("#222a44"),
+        backColor=colors.HexColor("#f2f4fb"), borderPadding=6,
+        spaceAfter=8,
     )
     return s
 
@@ -165,24 +172,49 @@ def construir():
                 st["prop_dim"],
             )
         )
-        items = []
-        for c in d["criterios"]:
-            items.append(ListItem(Paragraph(c["criterio"], st["crit"]),
-                                  leftIndent=6))
-        flow.append(
-            ListFlowable(
-                items, bulletType="bullet", bulletColor=VERDE,
-                bulletFontSize=7, leftIndent=12, spaceBefore=2,
-            )
-        )
-        # Propósito de cada criterio, debajo de la lista.
-        for c in d["criterios"]:
+        for i, c in enumerate(d["criterios"], 1):
             flow.append(
-                Paragraph(
-                    f"↳ <i>Propósito:</i> {c['proposito']}", st["prop"]
-                )
+                Paragraph(f"<b>{i}. {c['criterio']}</b>", st["crit"])
+            )
+            flow.append(
+                Paragraph(f"↳ <i>Pregunta diagnóstica:</i> {c['pregunta']}", st["prop"])
+            )
+            flow.append(
+                Paragraph(f"↳ <i>Propósito:</i> {c['proposito']}", st["prop"])
             )
         flow.append(Spacer(1, 12))
+
+    # --- Prompt usado por el asistente ---
+    flow.append(PageBreak())
+    flow.append(Paragraph("Prompt usado por el asistente", st["h2"]))
+    flow.append(
+        Paragraph(
+            "El asistente envía al modelo de IA (Google Gemini) dos mensajes: un "
+            "mensaje de <b>sistema</b> que fija su rol y las reglas, y un mensaje "
+            "de <b>usuario</b> que contiene la metodología completa (las "
+            "dimensiones y criterios de arriba), los niveles de cumplimiento, las "
+            "instrucciones y el texto del documento del Taller #3. A continuación "
+            "se reproduce el prompt tal como lo genera el código "
+            "(<font face='Courier'>evaluador.py</font>). El marcador "
+            "[DOCUMENTO...] se reemplaza en tiempo de ejecución por el texto del "
+            "PDF que se sube.",
+            st["cuerpo"],
+        )
+    )
+
+    system, user = _construir_prompt("[DOCUMENTO DEL TALLER #3 — se inserta aquí el texto del PDF subido]")
+
+    def _bloque_codigo(texto):
+        # Escapa y divide en líneas para reportlab; respeta saltos.
+        from xml.sax.saxutils import escape
+        for parrafo in texto.split("\n"):
+            parrafo = escape(parrafo) if parrafo.strip() else "&nbsp;"
+            flow.append(Paragraph(parrafo, st["code"]))
+
+    flow.append(Paragraph("Mensaje de sistema (rol del asistente)", st["h2"]))
+    _bloque_codigo(system)
+    flow.append(Paragraph("Mensaje de usuario (tarea e instrucciones)", st["h2"]))
+    _bloque_codigo(user)
 
     doc.build(flow)
     return SALIDA

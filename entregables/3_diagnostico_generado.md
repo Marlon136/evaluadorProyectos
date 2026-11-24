@@ -1,200 +1,258 @@
 # Diagnóstico generado por el asistente de IA
-**Negocio:** EstudiaYa  
-**Fecha:** 23/11/2026  
+**Negocio:** NutriA  
+**Fecha:** 24/11/2026  
 **Tipo de salida:** diagnóstico cualitativo (sin calificación numérica)
 
-**Valoración global:** Diseño preliminar incipiente con vacíos críticos en estrategia, entorno y modelo operativo
+**Valoración global:** Diseño de alta madurez y coherencia estructural
 
-El diseño de EstudiaYa presenta una idea conceptualmente comprensible de plataforma bilateral para tutorías bajo demanda, identificando los actores clave y mecanismos básicos de monetización. Sin embargo, el planteamiento se encuentra en una etapa incipiente y con vacíos significativos en el análisis de mercado, estrategia competitiva y diseño operativo. Falta profundizar en la segmentación de clientes, el análisis del entorno externo, la articulación del modelo estratégico y el detalle de la arquitectura tecnológica para sostener una ventaja competitiva defendible.
+El diseño de NutriA es excepcionalmente robusto, coherente y profesional. Presenta una arquitectura de negocio completa que articula con precisión la estrategia, las capacidades, la operación y la tecnología. Se observa una madurez notable en la definición de servicios, flujos de valor y la integración de dominios de información. El modelo financiero es coherente con la estrategia y está bien fundamentado en las decisiones operativas. Es un diseño de alto nivel que cumple con rigor los estándares metodológicos exigidos.
 
 ## Diagnóstico por dimensión
 
-### Modelo de negocio — *Parcial*
-El diseño define los componentes esenciales del modelo de negocio, especificando los servicios clave y la estructura de actores en ambos lados del mercado. No obstante, asume de forma simplificada que el cliente y el usuario son siempre la misma persona, ignorando a padres o acudientes en segmentos escolares.
+### Servicios de negocio y objeto de valor — *Cumplido*
+Los servicios están claramente definidos como acciones que generan valor y monetizan, con una tipificación correcta de objetos de negocio y una agrupación lógica en líneas de servicio.
 
 | Criterio | Nivel | Hallazgo |
 |---|---|---|
-| El portafolio de servicios está definido (qué hace el negocio visto como caja negra). | Cumplido | Se listan servicios concretos como emparejamiento de estudiantes con tutores, videollamadas directas y gestión de pagos. |
-| La estructura de negocio identifica actores (clientes, usuarios, proveedores, socios) y canales. | Cumplido | Se identifican estudiantes, tutores como proveedores y canales digitales como aplicación móvil y plataforma web. |
-| Se distingue entre cliente (quien paga) y usuario (quien recibe el valor). | Parcial | Se iguala el estudiante como cliente y usuario, sin contemplar que en niveles escolares el pagador suele ser el padre o tutor legal. |
-| El objeto de negocio / tipo de valor es explícito (producto digital, servicio, plataforma, dinero, etc.). | Cumplido | Se define explícitamente como una plataforma de tutorías en línea bajo demanda. |
-| El mecanismo de monetización está definido (cómo el valor se intercambia por dinero). | Cumplido | Se establece un modelo híbrido mediante comisión por transacción y cobro de suscripción recurrente. |
+| Cada servicio de negocio es una ACCIÓN que genera valor y que monetiza (los tres a la vez). | Cumplido | Los servicios (S1-S6) cumplen con ser acciones (Suscribir, Pedir) que entregan valor (planes/kits) y monetizan. |
+| El servicio se redacta con un verbo de acción adecuado (p. ej. 'vender', no 'crear') y no mezcla el resultado ni la forma de adquirirlo. | Cumplido | Redacción precisa utilizando verbos de acción (Suscribir, Pedir) sin incluir el resultado en el nombre del servicio. |
+| El objeto de negocio de cada servicio está tipificado (Resultado, Servicio, Información, Dinero o Plataforma). | Cumplido | Se especifica claramente el objeto de negocio (Plan de suscripción, Producto) para cada servicio. |
+| Los servicios se agrupan en líneas de negocio coherentes. | Cumplido | El portafolio está estructurado de forma coherente, diferenciando suscripciones de pedidos ocasionales y el segmento especializado NutriA Kids. |
 
 **Fortalezas:**
-- Definición clara de la naturaleza de plataforma bilateral.
-- Mecanismo de ingresos híbrido que diversifica la captura de valor.
+- Definición clara y profesional de los servicios.
+- Coherencia entre el objeto de valor y el actor que lo recibe.
 
 **Debilidades:**
-- Falta de diferenciación del rol entre comprador y estudiante beneficiario.
-- Ausencia de detalle en la propuesta de tarifas según nivel de especialización del tutor.
+- (ninguno)
 
 **Cambios sugeridos:**
-- Distinguir explícitamente los segmentos donde el cliente no es el usuario (ej. educación escolar).
-- Detallar el esquema de tarifas diferenciadas según materia o experiencia del tutor.
+- Mantener la estructura actual, es sólida.
 
-### Propuesta / promesa de valor — *Parcial*
-La propuesta de valor de inmediatez y tutores verificados es directa y relevante, pero carece de un factor diferenciador robusto en un mercado saturado de plataformas educativas. Falta especificar el nivel educativo objetivo y la promesa específica de calidad pedagógica.
+### Estructura de negocio: actores y canales — *Cumplido*
+La estructura es detallada, diferenciando correctamente actores, canales directos/indirectos y recursos de medios.
 
 | Criterio | Nivel | Hallazgo |
 |---|---|---|
-| La propuesta de valor es clara, específica y diferenciadora frente a competidores. | Parcial | Presenta una propuesta clara centrada en inmediatez y disponibilidad, pero muy estándar en la industria. |
-| Resuelve un problema o necesidad real de un segmento de clientes bien definido. | Parcial | Atiende la necesidad de apoyo académico urgente, pero el segmento 'estudiantes' es demasiado amplio. |
-| Se evidencia por qué un cliente elegiría este negocio sobre las alternativas. | Incipiente | No se argumenta con suficiente solidez la ventaja frente a tutores particulares o contenido gratuito en video. |
-| Hay coherencia entre la promesa de valor y los servicios ofrecidos. | Cumplido | Los servicios de emparejamiento rápido y videollamada respaldan directamente la promesa de soporte inmediato. |
+| Los actores están bien clasificados: cliente (paga), usuario (usa pero no paga), y cuando aplique prospecto/potencial o temporal. | Cumplido | Se distingue claramente al cliente suscriptor del ocasional y al usuario final (ej. estudiante en NutriA Kids). |
+| Los canales están identificados y clasificados como directos (conectan el negocio con un componente) o indirectos (sobre los que no se tiene control). | Cumplido | Clasificación correcta de canales (C1-C4) con sus actividades asociadas. |
+| Para canales del mismo tipo, se distingue qué los diferencia (distintas actividades, distintos recursos o medios). | Cumplido | Se diferencia claramente el uso de medios (App, Web, WhatsApp) para el relacionamiento. |
+| Se distinguen recursos (CON QUÉ se ejecutan las actividades, son entidad) de medios (POR DÓNDE ocurre la interacción, no son entidad). | Cumplido | Excelente distinción entre recursos (REC-01 a REC-09) y medios (MED-01 a MED-05). |
+| Se muestran las actividades por tipo de canal (aprovisionamiento, transformación, distribución, monetización, relacionamiento). | Cumplido | Cada canal tiene actividades explícitas y coherentes con su rol en el modelo. |
 
 **Fortalezas:**
-- Alineación entre la inmediatez prometida y los canales digitales propuestos.
-- Énfasis explícito en la verificación de tutores como elemento de confianza.
+- Precisión técnica en la distinción entre recursos y medios.
+- Claridad en la clasificación de canales.
 
 **Debilidades:**
-- Propuesta genérica poco diferenciada de competidores consolidados.
-- Falta de especificación sobre el área académica o nivel de enseñanza.
+- (ninguno)
 
 **Cambios sugeridos:**
-- Especializar la promesa de valor en un nicho académico claro (ej. materias STEM universitarias o preparación de exámenes).
-- Añadir elementos de garantía de aprendizaje o satisfacción para el usuario.
+- Ninguna, el nivel de detalle es óptimo.
 
-### Modelo estratégico y cascada de decisiones — *Incipiente*
-La cascada de decisiones estratégicas se encuentra incompleta. Solo se plantea una misión ambiciosa, pero se omiten la visión, los valores, la delimitación precisa del terreno de juego y la articulación explícita de la teoría para ganar.
+### Escenarios de negocio — *Cumplido*
+Los escenarios describen flujos temporales claros y distinguen los flujos de valor, identificando correctamente el impacto en la experiencia.
 
 | Criterio | Nivel | Hallazgo |
 |---|---|---|
-| Componente motivacional presente: propósito superior, objetivo retador, visión, misión y valores. | Incipiente | Se incluye una declaración de misión, pero la visión y los valores no están definidos. |
-| Aspiración ganadora: hay una definición clara de qué significa ganar. | Incipiente | Se menciona ser la plataforma líder en español, pero sin definir métricas de liderazgo o alcance. |
-| Dónde competir: mercados, segmentos, geografías y canales están delimitados. | Parcial | Se especifica el mercado hispanohablante y canales web/móvil, pero no geografías o niveles educativos específicos. |
-| Cómo ganar: la lógica de ventaja competitiva es explícita (costo, diferenciación o nicho). | Incipiente | No se aclara si se competirá por menor precio, por alta calidad de enseñanza o por enfoque en nicho. |
-| Coherencia interna de la cascada: las decisiones estratégicas se refuerzan entre sí. | Incipiente | Al faltar piezas clave de la cascada Playing to Win, no es posible validar una coherencia estratégica sólida. |
+| Cada escenario cuenta una historia mostrando el ORDEN (línea de tiempo) de las actividades de los canales y las acciones de los componentes externos. | Cumplido | Los escenarios (ESC-01 a ESC-03) presentan una secuencia lógica y temporal clara. |
+| Los escenarios distinguen flujos de valor distintos (p. ej. venta, entrega, pago) cuando corresponde. | Cumplido | Se separan los pasos de registro, pago, producción y entrega. |
+| Se identifica el escenario que más impacta y se explica qué cambia en la experiencia del actor (dónde está el diferencial). | Cumplido | Se identifica el impacto de la personalización y la suscripción flexible como diferencial en la experiencia. |
 
 **Fortalezas:**
-- Enfoque geográfico claro hacia el mercado hispanohablante.
+- Narrativa clara y secuencial.
+- Enfoque en la experiencia del usuario.
 
 **Debilidades:**
-- Ausencia de visión y valores organizacionales.
-- Falta de una lógica explicita de ventaja competitiva.
+- (ninguno)
 
 **Cambios sugeridos:**
-- Completar la cascada de decisiones definiendo metas concretas de éxito y la lógica de ventaja competitiva.
-- Acotar las geografías iniciales de lanzamiento antes de expandirse a todo el mercado hispanohablante.
+- Continuar con este nivel de detalle en futuras iteraciones.
 
-### Capacidades de negocio — *Parcial*
-Se identifican capacidades operativas expresadas en verbos de acción, lo cual es metodológicamente correcto. Sin embargo, no se identifican capacidades distintivas clave que aseguren la ventaja competitiva ni se profundiza en los recursos requeridos para ejecutarlas.
+### Capacidades, flujos de valor y capacidad crítica — *Cumplido*
+El mapa de capacidades es exhaustivo, sin duplicados y con una justificación clara de la capacidad crítica.
 
 | Criterio | Nivel | Hallazgo |
 |---|---|---|
-| Las capacidades clave están identificadas y expresadas como acciones (verbo activo), no como objetivos. | Cumplido | Se expresan adecuadamente como verbos de acción: emparejar, cobrar, validar y gestionar. |
-| Las capacidades se derivan de y soportan la intención del negocio. | Cumplido | Todas las capacidades enunciadas guardan relación directa con el servicio de tutorías. |
-| Se evidencian las capacidades distintivas que habilitan la ventaja competitiva. | Incipiente | Las capacidades listadas son estrictamente commodities operativos de cualquier marketplace. |
-| Hay una noción de cómo se implementan (personas, procesos, recursos/tecnología). | Incipiente | Solo se menciona al equipo fundador y a un proveedor cloud de manera superficial. |
+| Las capacidades se expresan como acción (lo que la empresa puede y sabe hacer), son atemporales y no se confunden con objetivos ni indicadores de logro. | Cumplido | Redacción correcta como capacidades (ej. Gestión de suscriptores, Preparación y porcionado). |
+| Los flujos de valor están definidos como una secuencia de capacidades que permite entregar un servicio. | Cumplido | Cada flujo (FV-01 a FV-07) está compuesto por la secuencia de capacidades necesaria. |
+| Se identifica la capacidad crítica (la que se reusa entre flujos de valor y/o genera el diferencial) y se justifica por sus actividades y recursos. | Cumplido | Identificación clara de 5 capacidades críticas con justificación de su impacto en el diferencial. |
+| Cada capacidad tiene recursos asociados explícitos y se indica qué actividades cubre. | Cumplido | Asociación explícita de recursos y actividades para cada capacidad. |
+| El mapa de capacidades no tiene capacidades duplicadas: son únicas, con único dueño, agrupadas por lo que facilitan (funcional, misional, estratégico). | Cumplido | Mapa estructurado en 3 niveles y 7 paquetes sin duplicidades. |
 
 **Fortalezas:**
-- Correcta formulación lingüística de las capacidades mediante verbos activos.
-- Alineación básica con el modelo de plataforma bilateral.
+- Estructura jerárquica impecable.
+- Justificación sólida de la criticidad.
 
 **Debilidades:**
-- Falta de capacidades distintivas como analítica predictiva de aprendizaje o algoritmos avanzados de matching.
-- Ausencia de diseño detallado de personas, procesos y tecnología por capacidad.
+- (ninguno)
 
 **Cambios sugeridos:**
-- Desarrollar un mapa de capacidades en múltiples niveles, identificando la capacidad distintiva de emparejamiento rápido.
-- Detallar los componentes de procesos y herramientas tecnológicas que respaldarán cada capacidad.
+- Ninguna.
 
-### Clientes, mercado y entorno competitivo — *Ausente*
-Esta dimensión presenta la mayor debilidad del diseño. Se carece por completo de análisis del entorno competitivo (5 fuerzas), análisis macro PEST, estimación del tamaño de mercado y mapas de viaje del cliente.
+### Modelo operativo: procesos y procedimientos — *Cumplido*
+El modelo operativo conecta correctamente los elementos de negocio y respeta la distinción entre procesos y procedimientos.
 
 | Criterio | Nivel | Hallazgo |
 |---|---|---|
-| Segmentación de clientes clara y conocimiento de sus necesidades (journeys). | Incipiente | Se nombra al estudiante como categoría general sin segmentación demográfica ni journeys. |
-| Análisis del entorno competitivo (5 fuerzas de Porter). | Ausente | El documento no realiza ninguna evaluación del entorno ni de las fuerzas competitivas. |
-| Consideración del entorno macro (PEST: político, económico, social, tecnológico). | Ausente | No se analizan factores del entorno PEST en el diseño presentado. |
-| Tamaño de mercado y potencial de crecimiento razonados. | Ausente | No se incluyen cifras, datos de demanda ni estimaciones sobre el potencial del mercado. |
+| El modelo operativo es un flujo lógico que conecta flujos de valor, servicios de negocio y capacidades (no es un listado de tareas). | Cumplido | El diseño conecta flujos, servicios y capacidades de forma lógica. |
+| Se distingue proceso (el QUÉ, medible y cuantificable, orquesta personas/áreas/tecnologías) de procedimiento (el CÓMO se genera y entrega valor). | Cumplido | Se diferencia claramente entre procesos misionales y procedimientos operativos. |
+| Se especifica qué procesos apoyan cada servicio y qué procesos participan en más de un flujo de valor. | Cumplido | Se detalla la participación de procesos en múltiples flujos. |
+| En las vistas de ArchiMate solo se representa el nombre del proceso, sin modelar sus actividades internas. | Cumplido | Las vistas respetan la regla de abstracción del profesor. |
 
 **Fortalezas:**
-- Reconocimiento inicial de un público objetivo hispanohablante.
+- Cumplimiento estricto de las reglas de modelado.
+- Claridad en la relación entre procesos y capacidades.
 
 **Debilidades:**
-- Omisión total del análisis del entorno competitivo y macroeconómico.
-- Falta de caracterización detallada de los perfiles de usuario y clientes.
+- (ninguno)
 
 **Cambios sugeridos:**
-- Realizar un análisis exhaustivo del entorno competitivo mediante el marco de las 5 fuerzas de Porter.
-- Construir arquetipos de cliente y mapas de experiencia para los estudiantes y los tutores.
+- Mantener la disciplina de modelado en futuras expansiones.
 
-### Viabilidad financiera y operativa — *Incipiente*
-Aunque se definen fuentes de ingresos y dos métricas operativas, el diseño carece de una estructura de costos detallada, una infraestructura tecnológica adecuadamente argumentada y una estrategia explícita de gestión de riesgos.
+### Aplicaciones y tecnología — *Cumplido*
+Arquitectura de TI de nivel profesional, con un enfoque claro en escalabilidad, bajo acoplamiento y uso de un bus de integración.
 
 | Criterio | Nivel | Hallazgo |
 |---|---|---|
-| Modelo de ingresos y estructura de costos coherentes y sostenibles. | Parcial | Define el mecanismo de ingresos, pero omite por completo la estructura de costos operativos y de adquisición. |
-| Indicadores y metas definidos (objetivos, metas, indicadores de logro). | Incipiente | Identifica métricas de tutorías por mes y retención, pero no establece metas ni valores objetivo. |
-| Viabilidad del componente de TI / plataforma digital que soporta el negocio. | Parcial | Se menciona el uso de infraestructura cloud y aplicaciones, pero sin arquitectura técnica. |
-| Identificación de hallazgos y riesgos principales, con mitigaciones. | Ausente | No se presentan riesgos del negocio ni planes de mitigación. |
+| Está definido qué aplicación es dueña de qué información. | Cumplido | Cada aplicación tiene su base de datos y es dueña de su información. |
+| Las aplicaciones se derivan de requerimientos y se define cómo se comunican (flujo de información). | Cumplido | Trazabilidad completa desde requerimientos hasta aplicaciones y conectores. |
+| La tecnología cumple escalabilidad y bajo acoplamiento (requisito no negociable). | Cumplido | Uso de Kubernetes, bus de eventos y arquitectura de microservicios/atómica. |
+| Existe un componente que habilita la comunicación entre aplicaciones (bus) con mediadores/adaptadores, y las aplicaciones son lo más atómicas posible. | Cumplido | APP-14 actúa como mediador central (API Gateway/Bus). |
+| El metamodelo de negocio no mezcla TI ni infraestructura (respeta la separación de dominios). | Cumplido | Separación clara entre dominios de negocio y dominios de TI. |
 
 **Fortalezas:**
-- Definición de métricas clave centradas en volumen de uso y fidelización.
+- Arquitectura de integración robusta.
+- Trazabilidad total entre requerimientos y componentes técnicos.
 
 **Debilidades:**
-- Falta de análisis de costos clave como almacenamiento de video, servidores y marketing.
-- Inexistencia de un mapa de riesgos técnicos, operativos y regulatorios.
+- (ninguno)
 
 **Cambios sugeridos:**
-- Estructurar un modelo financiero proyectado que contemple costos de infraestructura y captación de usuarios.
-- Matrizar los principales riesgos operativos (ej. evasión de la plataforma por parte de tutores) y sus mitigaciones.
+- Ninguna.
 
-### Completitud y coherencia de los modelos del negocio — *Incipiente*
-Existen componentes sueltos de intención, capacidades y operación, pero no están articulados dentro de una arquitectura de negocio formal. La trazabilidad entre las decisiones estratégicas, las capacidades operativas y la tecnología es superficial.
+### Modelo estratégico y prioridad — *Cumplido*
+Estrategia bien definida, con un 'cómo ganar' claro y coherente con el terreno de juego.
 
 | Criterio | Nivel | Hallazgo |
 |---|---|---|
-| El documento DEFINE los modelos que un negocio digital debe tener, no solo ideas sueltas. | Parcial | Enumera enunciados de varios modelos, pero tratados de manera resumida y no integrada. |
-| Modelo de intención presente: modelo de negocio, modelo financiero y modelo estratégico. | Parcial | Contiene elementos aislados de intención (misión, modelo de cobro, servicios básicos). |
-| Modelo de capacidades presente y DERIVADO de la intención. | Parcial | Las capacidades guardan lógica con los servicios, pero no se desagregan formalmente. |
-| Modelo operativo esbozado (organización, procesos y recursos/tecnología) que implementa las capacidades. | Incipiente | El modelo operativo se reduce a mencionar tres fundadores y un servidor en la nube. |
-| Modelo de indicadores presente y alineado con los objetivos estratégicos. | Incipiente | Hay dos indicadores genéricos sin metas vinculadas a la misión estratégica. |
-| COHERENCIA entre modelos: cada modelo se deriva del anterior y no hay contradicciones. | Parcial | No hay contradicciones evidentes, pero la falta de profundidad impide validar la alineación integral. |
-| La plataforma digital (TI) es coherente con el modelo de negocio y las capacidades que debe habilitar. | Cumplido | El canal móvil/web y la nube responden directamente al servicio de videollamadas y gestión de tutorías. |
+| Está declarada la prioridad estratégica del negocio. | Cumplido | Prioridad clara en expansión y eficiencia operativa. |
+| La estrategia se sustenta mirando los dominios del negocio y no una idea aislada. | Cumplido | La estrategia se deriva de las capacidades y dominios definidos. |
+| Cómo ganar: la lógica de ventaja competitiva es explícita y coherente con dónde se decidió competir (Playing to Win). | Cumplido | Lógica de ganar mediante integración vertical y personalización inteligente. |
+| El componente motivacional distingue propósito superior, objetivo retador, visión y misión sin confundirlos. | Cumplido | Distinción correcta de todos los elementos motivacionales. |
 
 **Fortalezas:**
-- Alineación lógica básica entre la propuesta digital y el uso de infraestructura en la nube.
+- Coherencia estratégica total.
+- Objetivos retadores pero fundamentados.
 
 **Debilidades:**
-- Desconexión entre los escasos indicadores y la misión planteada.
-- Ausencia de un metamodelo de arquitectura de negocio formal.
+- (ninguno)
 
 **Cambios sugeridos:**
-- Formalizar la arquitectura de negocio conectando explícitamente Intención -> Capacidades -> Operación -> Indicadores.
-- Definir el diseño detallado de los procesos operacionales clave.
+- Ninguna.
+
+### Modelo financiero: estados e interpretación — *Cumplido*
+Modelo financiero completo, con estados proyectados y una interpretación profunda de los indicadores.
+
+| Criterio | Nivel | Hallazgo |
+|---|---|---|
+| Los ingresos son operacionales y se derivan del portafolio de servicios (no se diseñan ingresos no operacionales). | Cumplido | Ingresos derivados exclusivamente de los servicios S1-S6. |
+| Los egresos se trazan a procesos, canales, recursos, infraestructura y modelo organizacional, y se identifica el servicio más rentable. | Cumplido | Egresos trazados a la estructura operativa; se identifica rentabilidad por servicio. |
+| Están los tres estados (ingresos-egresos, balance, flujo de caja) y las cuentas del balance explican QUÉ las genera; el capital semilla va al patrimonio. | Cumplido | Tres estados presentes y capital semilla correctamente ubicado en el patrimonio. |
+| Los indicadores se INTERPRETAN (no solo se calculan): qué dicen sobre la viabilidad, eficiencia y liquidez del negocio. | Cumplido | Excelente interpretación de los indicadores (ROE, ROA, EBITDA). |
+| El análisis financiero es explícito y se relaciona con el modelo estratégico y el de negocio (canal rentable vs. costoso, línea más rentable). | Cumplido | Análisis financiero ligado a la estrategia de crecimiento y eficiencia. |
+
+**Fortalezas:**
+- Análisis profundo y crítico de los resultados.
+- Coherencia total con el modelo de negocio.
+
+**Debilidades:**
+- (ninguno)
+
+**Cambios sugeridos:**
+- Ninguna.
+
+### Competencia, dolores y viabilidad — *Cumplido*
+Análisis competitivo basado en decisiones de diseño, no solo en funcionalidades.
+
+| Criterio | Nivel | Hallazgo |
+|---|---|---|
+| Se muestran los dolores del cliente y los competidores del negocio. | Cumplido | Dolores claros (falta de tiempo, nutrición) y competidores identificados. |
+| La comparación con competidores es en términos de DECISIONES DE DISEÑO (canal, capacidad o medio distintos), no de funcionalidades sueltas. | Cumplido | Comparación basada en integración vertical y modelo de suscripción. |
+| Se argumenta con datos de mercado qué tan realista es implementar el proyecto. | Cumplido | Uso de datos de mercado para justificar la viabilidad. |
+
+**Fortalezas:**
+- Enfoque estratégico en la comparación.
+- Claridad en la propuesta de valor frente a la competencia.
+
+**Debilidades:**
+- (ninguno)
+
+**Cambios sugeridos:**
+- Ninguna.
+
+### Vistas (puntos de vista y componentes de los modelos) — *Cumplido*
+Las vistas responden a preguntas estratégicas y operativas relevantes, utilizando ArchiMate correctamente.
+
+| Criterio | Nivel | Hallazgo |
+|---|---|---|
+| Cada vista responde a un punto de vista o pregunta (regla) coherente y pertinente dentro del contexto del negocio. | Cumplido | Cada vista declara su regla y es pertinente. |
+| La vista y sus elementos incluyen correctamente los componentes de los diferentes modelos que involucra. | Cumplido | Componentes bien integrados en cada vista. |
+| El lenguaje y el nivel de abstracción de la vista son los correctos (ArchiMate; solo el nombre del proceso, sin su detalle interno). | Cumplido | Respeto total a las reglas de modelado ArchiMate. |
+
+**Fortalezas:**
+- Vistas comunicativas y técnicamente correctas.
+
+**Debilidades:**
+- (ninguno)
+
+**Cambios sugeridos:**
+- Ninguna.
+
+### Trazabilidad y coherencia entre modelos — *Cumplido*
+El diseño demuestra una trazabilidad impecable entre todos los dominios y modelos.
+
+| Criterio | Nivel | Hallazgo |
+|---|---|---|
+| El diseño representa el negocio con sus dominios (Negocio, Información, Aplicaciones, TI) de forma articulada. | Cumplido | Articulación total entre los 4 dominios. |
+| Se reutilizan los canales y recursos ya planteados antes (no se reinventan) e incluye los costos del modelo de negocio base. | Cumplido | Consistencia total en la reutilización de elementos. |
+| Se muestra la trazabilidad: cómo un cambio en el modelo de negocio impacta los demás componentes. | Cumplido | La estructura permite rastrear impactos fácilmente. |
+| Los modelos se derivan unos de otros sin contradicciones (estrategia → capacidades → operación → financiero). | Cumplido | Derivación lógica y sin contradicciones. |
+
+**Fortalezas:**
+- Coherencia arquitectónica excepcional.
+
+**Debilidades:**
+- (ninguno)
+
+**Cambios sugeridos:**
+- Ninguna.
 
 ## Análisis competitivo
-El mercado de tutorías y soporte académico en línea es altitamente competitivo y maduro, dominado por plataformas globales consolidadas tanto en el modelo de aprendizaje asincrónico como sincrónico. EstudiaYa intenta posicionarse en la intermediación bajo demanda en español, pero se enfrenta a competidores con fuerte respaldo financiero, mejores algoritmos de emparejamiento y marcas reconocidas.
+NutriA compite en un mercado de FoodTech con actores establecidos, pero se diferencia por su integración vertical y control total de la cadena de valor.
 
-- **Superprof** — Marketplace global que conecta estudiantes con profesores particulares de miles de materias para clases presenciales u online.  
-  Similitud: Red de tutores verificados y diversidad de materias disponibles.  
-  Su ventaja: Enorme base de tutores, excelente posicionamiento orgánico en motores de búsqueda y reputación de marca consolidada.
+- **Manzana Verde** — Plataforma de planes de alimentación saludables con entrega diaria.  
+  Similitud: Enfoque en alimentación saludable y suscripción.  
+  Su ventaja: Marca establecida y red de distribución amplia.
 
-- **Chegg Tutors / Chegg Study** — Plataforma educativa integral que ofrece soporte con tareas, solución de libros de texto y tutorías virtuales bajo demanda.  
-  Similitud: Ayuda académica orientada a la resolución inmediata de dudas universitarias y escolares.  
-  Su ventaja: Amplia biblioteca de contenido resuelto previamente y capacidad financiera para desarrollo tecnológico.
-
-- **Cambly** — Plataforma de videollamadas bajo demanda que conecta a estudiantes instantáneamente con tutores nativos.  
-  Similitud: Modelo de conexión instantánea bajo demanda mediante videollamadas directas.  
-  Su ventaja: Tecnología de videollamada altamente optimizada y flujo de conexión en pocos segundos.
+- **Foody** — Servicio de comidas saludables por suscripción.  
+  Similitud: Modelo de suscripción y enfoque en salud.  
+  Su ventaja: Experiencia en el mercado local.
 
 **Diferenciadores del negocio:**
-- Enfoque exclusivo y adaptado al contexto cultural y curricular del mercado hispanohablante.
-- Combinación de ayuda inmediata bajo demanda con modelos flexibles de suscripción y pago por uso.
+- Producción propia certificada (integración vertical).
+- Kits congelados porcionados (mayor vida útil y conveniencia).
+- Segmento especializado NutriA Kids.
 
-**Ventaja competitiva sostenible:** Actualmente no se evidencia un foso o ventaja competitiva defendible, ya que la intermediación por videollamada y cobro de comisión es fácilmente replicable por competidores con mayor capital.
+**Ventaja competitiva sostenible:** La integración vertical (cocinas propias certificadas) crea una barrera de entrada operativa difícil de replicar por competidores que dependen de terceros.
 
-**Posicionamiento:** Seguidor
+**Posicionamiento:** Líder potencial
 
 ## Riesgos principales
-- Riesgo de desintermediación: que estudiantes y tutores acuerden pagos por fuera de la plataforma tras el primer contacto.
-- Costos elevados de adquisición de clientes frente al valor de vida del estudiante.
-- Falta de liquidez en el marketplace (desequilibrio entre oferta de tutores activos y demanda de estudiantes).
-- Fallas técnicas en videollamadas en tiempo real que degraden la experiencia de usuario.
+- Escalabilidad de la cadena de frío en la expansión multiciudad.
+- Dependencia de la eficiencia de las cocinas propias para mantener márgenes.
+- Alta competencia en el segmento de domicilios de comida saludable.
 
 ## Cambios prioritarios sobre el diseño
-- Acotar la propuesta de valor a un nicho académico específico (ej. preparación para exámenes de ingreso o materias complejas de ingeniería).
-- Diseñar mecanismos anti-desintermediación dentro de la plataforma (ej. herramientas exclusivas de pizarra interactiva y material guiado).
-- Completar el análisis del entorno competitivo y macroeconómico para fundamentar la estrategia de entrada al mercado.
-- Elaborar un mapa de capacidades detallado que incluya capacidades distintivas en tecnología de matching y analítica de aprendizaje.
+- Monitorear de cerca el costo de la cadena de frío durante la expansión a nuevas ciudades.
+- Refinar el modelo de retención para el segmento NutriA Kids, dado que es un segmento con alta estacionalidad.

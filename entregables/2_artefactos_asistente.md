@@ -18,19 +18,30 @@ Archivos clave: `rubrica.py` (metodología), `evaluador.py` (prompts y llamada a
 
 ## 2. Metodología de evaluación
 
-La metodología completa (dimensiones, criterios y el **propósito** de cada uno) está en el documento `1_metodologia_criterios.pdf`, generado a partir del código fuente del asistente (`rubrica.py`), por lo que refleja exactamente lo que el asistente aplica.
+La metodología completa (dimensiones, criterios, **pregunta diagnóstica** y **propósito** de cada criterio) está en `1_metodologia_criterios.pdf`, generado desde el código del asistente (`rubrica.py`), por lo que refleja exactamente lo que aplica.
 
-**Resumen de las 7 dimensiones:**
+### De dónde salieron los criterios (y por qué son propios)
 
-1. **Modelo de negocio** — cómo el negocio produce y monetiza valor.
-2. **Propuesta / promesa de valor** — por qué un cliente lo elegiría.
-3. **Modelo estratégico y cascada de decisiones** — dirección estratégica (Playing to Win).
-4. **Capacidades de negocio** — qué debe saber hacer el negocio.
-5. **Clientes, mercado y entorno competitivo** — mirada hacia afuera (Porter, PEST).
-6. **Viabilidad financiera y operativa** — sostenibilidad y riesgos.
-7. **Completitud y coherencia de los modelos del negocio** — que los modelos existan y se deriven unos de otros.
+Los criterios NO son genéricos ni la rúbrica oficial. Se construyeron a partir de tres fuentes concretas de nuestro propio trabajo:
 
-Cada criterio declara **qué verifica y por qué importa** en un negocio digital (ver PDF de metodología).
+1. **Nuestras notas de clase**, con las definiciones textuales del curso: "no toda acción es servicio de negocio: debe cumplir acción, genera valor, monetización", "flujo de valor = secuencia de capacidades que permite entregar un servicio", "el mapa no tiene capacidades duplicadas", "recursos (con qué) vs. medios (por dónde)", los tipos de actor (cliente/usuario/prospecto/temporal), los 4 dominios (Negocio, Información, Aplicaciones, TI), la frontera digital, etc.
+2. **Las correcciones que el profesor nos hizo** sobre el diseño: "la capacidad crítica se reusa entre flujos", "no diseñar ingresos no operacionales", "la tecnología tiene que escalar y ser de bajo acoplamiento", "en las vistas de Archi solo va el nombre del proceso", "el capital semilla va al patrimonio, no a ingresos", "comparar con competidores por decisiones de diseño".
+3. **Las lecturas del curso** (Arquitectura de Negocio) y *Playing to Win*.
+
+Por eso cada criterio trae una **pregunta diagnóstica**: la pregunta exacta que se hace al revisar, que el asistente responde con evidencia del documento.
+
+**Las 10 dimensiones** (organizadas por los elementos y modelos de la arquitectura de negocio del curso):
+
+1. **Servicios de negocio y objeto de valor** — un servicio es una acción que genera valor y monetiza; objeto tipificado; líneas de negocio.
+2. **Estructura de negocio: actores y canales** — cliente/usuario/prospecto/temporal; canales directos/indirectos; recursos vs. medios.
+3. **Escenarios de negocio** — cuentan la historia con el orden temporal; cuál impacta más.
+4. **Capacidades, flujos de valor y capacidad crítica** — flujo de valor = secuencia de capacidades; capacidad crítica reusada; mapa sin duplicados.
+5. **Modelo operativo** — procesos vs. procedimientos; qué proceso apoya qué servicio; reglas de modelado en Archi.
+6. **Aplicaciones y tecnología** — dueño de la información, escalabilidad, bajo acoplamiento, bus; separación de dominios.
+7. **Modelo estratégico y prioridad** — prioridad estratégica, cómo ganar, componente motivacional.
+8. **Modelo financiero** — tres estados, interpretación de indicadores y análisis ligado a estrategia y negocio.
+9. **Competencia, dolores y viabilidad** — comparación por decisiones de diseño y datos de mercado.
+10. **Trazabilidad y coherencia entre modelos** — los 4 dominios articulados e implicaciones de un cambio.
 
 ### Cumplimiento de las reglas del enunciado
 
